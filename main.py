@@ -10,8 +10,11 @@ def main():
     win.wait_for_close()
 
 def build_maze(win):
-    maze = Maze(0, 0, 20, 20, win.width // 20, win.height // 20, win)
+    maze = Maze(40, 40, 10, 20, win.width // 40, win.height // 40, win, 0)
     maze.create_cells()
+    maze.break_entrance_and_exit()
+    maze.break_walls(0, 0)
+    maze.reset_cells_visited()
 
 if __name__ == "__main__":
     main()
