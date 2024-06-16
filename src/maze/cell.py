@@ -44,13 +44,13 @@ class Cell:
             self._win.draw_line(line, "white")
         
     def draw_move(self, to_cell, undo=False):
-        if undo == False:
+        if not undo:
             cur_center = Point(abs((self._x1 + self._x2) // 2), abs((self._y1 + self._y2) // 2))
             to_center = Point(abs((to_cell._x1 + to_cell._x2) // 2), abs((to_cell._y1 + to_cell._y2) // 2))
             line = Line(cur_center, to_center)
-            self._win.draw_line(line, "red")
+            self._win.draw_line(line, "green")
         else:
             cur_center = Point(abs((self._x1 + self._x2) // 2), abs((self._y1 + self._y2) // 2))
             to_center = Point(abs((to_cell._x1 + to_cell._x2) // 2), abs((to_cell._y1 + to_cell._y2) // 2))
             line = Line(cur_center, to_center)
-            self._win.draw_line(line, "gray")
+            self._win.draw_line(line, "red")
